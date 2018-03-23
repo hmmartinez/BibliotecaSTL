@@ -1,0 +1,39 @@
+//Un palíndromo es una cadena(string) que se escribe de la misma forma al
+//derecho y al revés.Algunos ejemplos de palíndromos son “radar” y “Anita lava la tina”.Escriba una función llamada
+//probadorPalindromos que utilice el algoritmo reverse en una copia de un objeto string y luego compare el
+//objeto string original con el string invertido para determinar si el original es un palíndromo o no.Al igual que
+//los contenedores de la Biblioteca estándar, los objetos string proporcionan funciones como begin y end para obtener
+//iteradores que apuntan a caracteres en un objeto string.Suponga que el objeto string original contiene
+//todas las letras en minúscula y no contiene signos de puntuación.Use la función probadorPalindromos en un
+//programa.
+
+#include <iostream>
+#include <string>
+#include <conio.h>
+
+using namespace std;
+
+bool probadorPalindromos(string);
+
+int main()
+{
+
+	string palabra;
+
+	cout << "Escriba una palabra para revisar si es un palindromo: ";
+	cin >> palabra;
+
+	if (probadorPalindromos(palabra)) {
+		cout << "La palabra es un palindromo.";
+	}
+	else {
+		cout << "La palabra no es un palindromo.";
+	}
+
+	_getch();
+}
+
+bool probadorPalindromos(string palabra)
+{
+	return (palabra == string(palabra.rbegin(), palabra.rend()));
+}
